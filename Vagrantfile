@@ -8,8 +8,8 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "node01.vm"
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 4096
-    v.cpus = 2
+    v.memory = 2048
+    v.cpus = 1
   end
   
   config.vm.provision "shell" do |s|
