@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     vagrant1.vm.box = "centos/7"
     vagrant1.vm.network "private_network", ip: "10.10.10.2"
     vagrant1.vm.network "forwarded_port", guest: 80, host: 8001
-    vagrant1.vm.hostname = "vagrant2"
+    vagrant1.vm.hostname = "vagrant1"
 
     vagrant1.vm.provider "virtualbox" do |v|
       v.memory = 1024
