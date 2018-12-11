@@ -8,6 +8,8 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "vagrant1"
 
   config.vm.provider "virtualbox" do |v|
+    # set default nic type for mac os
+    v.default_nic_type = "Am79C973"
     v.memory = 2048
     v.cpus = 1
   end
