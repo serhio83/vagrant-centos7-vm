@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOSTNAME='10.10.10.2'
+HOSTNAME='vm1'
 
 printf "destroying vagrant VM...\n"
 sh -c 'vagrant destroy -f'
