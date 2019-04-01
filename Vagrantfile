@@ -2,16 +2,16 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.define "vagrant1" do |vagrant1|
-    vagrant1.vm.box = "centos/7"
-    vagrant1.vm.network "private_network", ip: "10.10.10.2"
-    vagrant1.vm.hostname = "vagrant1"
-    vagrant1.vm.provider "virtualbox" do |v|
+  config.vm.define "vm1" do |vm1|
+    vm1.vm.box = "centos/7"
+    vm1.vm.network "private_network", ip: "10.10.10.2"
+    vm1.vm.hostname = "vm1"
+    vm1.vm.provider "virtualbox" do |v|
       v.default_nic_type = "Am79C973"
       v.memory = 2048
       v.cpus = 1
     end
-    vagrant1.vm.provision "shell" do |s|
+    vm1.vm.provision "shell" do |s|
       ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
       s.inline = <<-SHELL
         echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
@@ -20,17 +20,16 @@ Vagrant.configure("2") do |config|
       SHELL
     end
   end
-
-  config.vm.define "vagrant2" do |vagrant2|
-    vagrant2.vm.box = "centos/7"
-    vagrant2.vm.network "private_network", ip: "10.10.10.3"
-    vagrant2.vm.hostname = "vagrant2"
-    vagrant2.vm.provider "virtualbox" do |v|
+  config.vm.define "vm2" do |vm2|
+    vm2.vm.box = "centos/7"
+    vm2.vm.network "private_network", ip: "10.10.10.3"
+    vm2.vm.hostname = "vm2"
+    vm2.vm.provider "virtualbox" do |v|
       v.default_nic_type = "Am79C973"
       v.memory = 2048
       v.cpus = 1
     end
-    vagrant2.vm.provision "shell" do |s|
+    vm2.vm.provision "shell" do |s|
       ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
       s.inline = <<-SHELL
         echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
@@ -39,17 +38,16 @@ Vagrant.configure("2") do |config|
       SHELL
     end
   end
-
-  config.vm.define "vagrant3" do |vagrant3|
-    vagrant3.vm.box = "centos/7"
-    vagrant3.vm.network "private_network", ip: "10.10.10.4"
-    vagrant3.vm.hostname = "vagrant3"
-    vagrant3.vm.provider "virtualbox" do |v|
+  config.vm.define "vm3" do |vm3|
+    vm3.vm.box = "centos/7"
+    vm3.vm.network "private_network", ip: "10.10.10.4"
+    vm3.vm.hostname = "vm3"
+    vm3.vm.provider "virtualbox" do |v|
       v.default_nic_type = "Am79C973"
       v.memory = 2048
       v.cpus = 1
     end
-    vagrant3.vm.provision "shell" do |s|
+    vm3.vm.provision "shell" do |s|
       ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
       s.inline = <<-SHELL
         echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
@@ -58,5 +56,4 @@ Vagrant.configure("2") do |config|
       SHELL
     end
   end
-
 end
