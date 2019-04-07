@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.network "private_network", ip: "10.10.10.2"
   config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.hostname = "vagrant1"
+  config.vm.hostname = "vm1"
 
   config.vm.provider "virtualbox" do |v|
     # set default nic type for mac os
