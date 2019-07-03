@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
     vm1.vm.hostname = "vm1"
     vm1.vm.provider "virtualbox" do |v|
       v.default_nic_type = "Am79C973"
-      v.memory = 2048
+      v.memory = 1024
       v.cpus = 1
     end
     vm1.vm.provision "shell" do |s|
@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     vm2.vm.hostname = "vm2"
     vm2.vm.provider "virtualbox" do |v|
       v.default_nic_type = "Am79C973"
-      v.memory = 2048
+      v.memory = 1024
       v.cpus = 1
     end
     vm2.vm.provision "shell" do |s|
